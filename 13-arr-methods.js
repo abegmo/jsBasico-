@@ -8,28 +8,36 @@ var articulos = [
     { nombre: 'audifonos', costo: 1700 }
 ]
 
+//Recuerda que dentro de un array pueden haber objetos, como es el ejemplo de arriba. [{}]
 
-// Metodos para recorrer arrays 
+
+// METODOS PARA RECORRER ARRAYS
 
 
-//   Metodo Filter  
+//   METODO FILTER
+
 /* Válida si es un true o false para poder meterlos al nuevo array, y éste método no modifica el array original */
 
 var articulosFiltrados = articulos.filter(function(articulo){
-    return articulo.costo <= 500  /* Menor o igual a 100 */ 
+    return articulo.costo <= 500  /* Menor o igual a 100 */
 });
 
 console.log(articulosFiltrados);
 
- //   Metodo Map 
+//Me resulta un poco confuso el parametro "articulo" dentro de la function. Sin embargo interpreto que al estar siendo llamada la funcion dentro de un metodo de una variable, seguimos "dentro" de la misma y por eso guardan estrecha relacion
+
+
+ //  ------------------- Metodo Map ------------------
+ //Tambien va a generar un nuevo array
 
 var nombreArticulos = articulos.map(function(articulo){
-    return articulo.nombre  
+    return articulo.nombre
 });
 
 console.log(nombreArticulos);
 
- //   Metodo Find
+
+ //   ------------------ Metodo Find --------------------
  /* De igual forma, con este método se valida un true o false para encontrar un elemento y si está lo regresa y si no, no pasa nada */
 
 var encuentraArticulos = articulos.find(function(articulo){
@@ -38,7 +46,8 @@ var encuentraArticulos = articulos.find(function(articulo){
 
 console.log(encuentraArticulos);
 
-//   Metodo forEach
+//   --------------------- Metodo forEach ----------------------
+// Realiza un filtrado sobre el array sin modificarlo, tampoco genera un nuevo array
 
 articulos.forEach(function(articulo){
     console.log(articulo.nombre);
@@ -80,3 +89,7 @@ var incluyeNumero = numeros.includes(2);
 
 console.log(incluyeNumero);
 
+
+// ELiminando elementos de un array
+
+// https://platzi.com/clases/1814-basico-javascript/28608-eliminando-elementos-de-un-array/
